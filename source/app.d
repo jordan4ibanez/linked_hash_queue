@@ -25,6 +25,16 @@ void main() {
 	}
 
 	blah.pushBack(1);
+	blah.pushFront(5);
+
+	foreach (i; blah.queue) {
+		writeln(i);
+	}
+
+	writeln("=====");
+
+	blah.popBack();
+	blah.popFront();
 
 	foreach (i; blah.queue) {
 		writeln(i);

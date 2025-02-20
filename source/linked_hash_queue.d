@@ -62,7 +62,7 @@ public:
         }
         T gotten = queue.front();
         result = result.Some(gotten);
-        queue.removeFront();
+        queue.removeBack();
         keys.remove(gotten);
         return result;
     }
