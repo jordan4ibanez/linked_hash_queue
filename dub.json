@@ -6,7 +6,7 @@
 	"dependencies": {
 		"optibrev": "~>0.0.2"
 	},
-	"description": "A linked HashQueue for D.",
+	"description": "A linked hash queue for D.",
 	"license": "MIT",
 	"name": "linked_hash_queue"
 }
