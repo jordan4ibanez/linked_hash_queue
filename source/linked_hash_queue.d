@@ -26,9 +26,11 @@ public:
         queue.insertBack(element);
     }
 
+    /*
+    Pop the first element off the front of the queue. If empty returns None.
+    */
     Option!T pop() {
         Option!T result;
-
         if (queue.empty()) {
             return result;
         }
@@ -36,7 +38,6 @@ public:
         result = result.Some(gotten);
         queue.removeFront();
         keys.remove(gotten);
-
         return result;
     }
 
