@@ -3,6 +3,8 @@
 
 This is specialized to act as a regular FIFO/FILO queue but disallows duplicates.
 
+This uses [optibrev](https://code.dlang.org/packages/optibrev) optional return type to make your life easier. :D
+
 How to use:
 
 ```D
