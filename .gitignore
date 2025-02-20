@@ -1,0 +1,16 @@
+.dub
+docs.json
+__dummy.html
+docs/
+/linked_hash_queue
+linked_hash_queue.so
+linked_hash_queue.dylib
+linked_hash_queue.dll
+linked_hash_queue.a
+linked_hash_queue.lib
+linked_hash_queue-test-*
+*.exe
+*.pdb
+*.o
+*.obj
+*.lst

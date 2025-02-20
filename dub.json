@@ -1,0 +1,9 @@
+{
+	"authors": [
+		"jordan4ibanez"
+	],
+	"copyright": "Copyright © 2025, jordan4ibanez",
+	"description": "A linked and double linked HashQueue for D.",
+	"license": "MIT",
+	"name": "linked_hash_queue"
+}
