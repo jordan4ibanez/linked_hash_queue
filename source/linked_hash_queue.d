@@ -65,20 +65,6 @@ public:
         keys.remove(gotten);
         return result;
     }
-
-    /**
-    Pop random element off the queue. If empty, it returns None.
-    */
-    Option!T popRandom()() {
-        Option!T result;
-        if (queue.empty()) {
-            return result;
-        }
-        T gotten = queue.removeAny();
-        result = result.Some(gotten);
-        keys.remove(gotten);
-        return result;
-    }
 }
 
 unittest {
@@ -171,4 +157,14 @@ unittest {
     assert(blah.popFront.unwrap == 2);
     assert(blah.popFront.unwrap == 1);
 
+    // I ran out of ideas for the unit test.
+
+    blah.pushFront(1);
+    blah.pushFront(2);
+    blah.pushFront(3);
+
+    writeln(blah.popBack());
+    writeln(blah.popFront());
+    writeln(blah.popBack());
+    assert(blah.popFront().isNone());
 }
