@@ -15,7 +15,7 @@ protected:
 public:
 
     /**
-    Push element to the front of the queue. If it exists this has no effect.
+    Push element to the front of the queue. If it exists in the queue, this has no effect.
     */
     void pushFront(T element) {
         if (element in keys) {
@@ -26,7 +26,7 @@ public:
     }
 
     /**
-    Push element to the back of the queue. If it exists this has no effect.
+    Push element to the back of the queue. If it exists in the queue, this has no effect.
     */
     void pushBack(T element) {
         if (element in keys) {
@@ -37,7 +37,7 @@ public:
     }
 
     /**
-    Pop the front element off the front of the queue. If empty returns None.
+    Pop the front element off the front of the queue. If empty, it returns None.
     */
     Option!T popFront() {
         Option!T result;
@@ -52,7 +52,7 @@ public:
     }
 
     /**
-    Pop the back element off the back of the queue. If empty returns None.
+    Pop the back element off the back of the queue. If empty, it returns None.
     */
     Option!T popBack() {
         Option!T result;
@@ -65,6 +65,10 @@ public:
         keys.remove(gotten);
         return result;
     }
+
+    /**
+    Pop random element off the queue. If empty, it returns None.
+    */
 
 }
 
