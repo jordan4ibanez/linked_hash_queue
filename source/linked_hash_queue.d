@@ -69,7 +69,16 @@ public:
     /**
     Pop random element off the queue. If empty, it returns None.
     */
-
+    Option!T popRandom()() {
+        Option!T result;
+        if (queue.empty()) {
+            return result;
+        }
+        T gotten = queue.removeAny();
+        result = result.Some(gotten);
+        keys.remove(gotten);
+        return result;
+    }
 }
 
 unittest {
