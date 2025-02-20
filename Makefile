@@ -1,5 +1,5 @@
 default:
-	@dub run
+	@dub test
 
 clean:
 	dub clean
