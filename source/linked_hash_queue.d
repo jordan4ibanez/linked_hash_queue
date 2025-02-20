@@ -70,101 +70,100 @@ public:
 unittest {
     import std.stdio;
 
-    LinkedHashQueue!int blah;
+    LinkedHashQueue!int myCoolQueue;
 
-    blah.pushBack(1);
-    blah.pushBack(2);
-    blah.pushBack(3);
-    blah.pushBack(4);
+    myCoolQueue.pushBack(1);
+    myCoolQueue.pushBack(2);
+    myCoolQueue.pushBack(3);
+    myCoolQueue.pushBack(4);
 
-    // int[] boof;
-    foreach (i; blah.queue) {
+    foreach (i; myCoolQueue.queue) {
         writeln(i);
     }
 
     writeln("====");
 
-    Option!int boof = blah.popFront();
+    Option!int testingThing = myCoolQueue.popFront();
 
-    if (boof.isSome()) {
+    if (testingThing.isSome()) {
         writeln("some!");
     }
 
-    blah.pushBack(1);
-    blah.pushFront(5);
+    myCoolQueue.pushBack(1);
+    myCoolQueue.pushFront(5);
 
-    foreach (i; blah.queue) {
+    foreach (i; myCoolQueue.queue) {
         writeln(i);
     }
 
     writeln("=====");
 
-    blah.popBack();
-    blah.popFront();
+    myCoolQueue.popBack();
+    myCoolQueue.popFront();
 
-    foreach (i; blah.queue) {
+    foreach (i; myCoolQueue.queue) {
         writeln(i);
     }
 
-    blah.popFront();
-    blah.popFront();
-    blah.popFront();
+    myCoolQueue.popFront();
+    myCoolQueue.popFront();
+    myCoolQueue.popFront();
 
     writeln("======");
-    foreach (i; blah.queue) {
+    foreach (i; myCoolQueue.queue) {
         writeln(i);
     }
 
-    assert(blah.popBack().isNone());
+    assert(myCoolQueue.popBack().isNone());
 
     // FIFO
 
-    blah.pushBack(1);
-    blah.pushBack(2);
-    blah.pushBack(3);
+    myCoolQueue.pushBack(1);
+    myCoolQueue.pushBack(2);
+    myCoolQueue.pushBack(3);
 
-    assert(blah.popFront.unwrap == 1);
-    assert(blah.popFront.unwrap == 2);
-    assert(blah.popFront.unwrap == 3);
+    assert(myCoolQueue.popFront.unwrap == 1);
+    assert(myCoolQueue.popFront.unwrap == 2);
+    assert(myCoolQueue.popFront.unwrap == 3);
 
     // LILO
 
-    blah.pushFront(1);
-    blah.pushFront(2);
-    blah.pushFront(3);
+    myCoolQueue.pushFront(1);
+    myCoolQueue.pushFront(2);
+    myCoolQueue.pushFront(3);
 
-    assert(blah.popBack.unwrap == 1);
-    assert(blah.popBack.unwrap == 2);
-    assert(blah.popBack.unwrap == 3);
+    assert(myCoolQueue.popBack.unwrap == 1);
+    assert(myCoolQueue.popBack.unwrap == 2);
+    assert(myCoolQueue.popBack.unwrap == 3);
 
     // FILO/Stack
 
-    blah.pushBack(1);
-    blah.pushBack(2);
-    blah.pushBack(3);
+    myCoolQueue.pushBack(1);
+    myCoolQueue.pushBack(2);
+    myCoolQueue.pushBack(3);
 
-    assert(blah.popBack.unwrap == 3);
-    assert(blah.popBack.unwrap == 2);
-    assert(blah.popBack.unwrap == 1);
+    assert(myCoolQueue.popBack.unwrap == 3);
+    assert(myCoolQueue.popBack.unwrap == 2);
+    assert(myCoolQueue.popBack.unwrap == 1);
 
     // LIFO/Reverse Stack
 
-    blah.pushFront(1);
-    blah.pushFront(2);
-    blah.pushFront(3);
+    myCoolQueue.pushFront(1);
+    myCoolQueue.pushFront(2);
+    myCoolQueue.pushFront(3);
 
-    assert(blah.popFront.unwrap == 3);
-    assert(blah.popFront.unwrap == 2);
-    assert(blah.popFront.unwrap == 1);
+    assert(myCoolQueue.popFront.unwrap == 3);
+    assert(myCoolQueue.popFront.unwrap == 2);
+    assert(myCoolQueue.popFront.unwrap == 1);
 
     // I ran out of ideas for the unit test.
 
-    blah.pushFront(1);
-    blah.pushFront(2);
-    blah.pushFront(3);
+    myCoolQueue.pushFront(1);
+    myCoolQueue.pushFront(2);
+    myCoolQueue.pushFront(3);
 
-    writeln(blah.popBack());
-    writeln(blah.popFront());
-    writeln(blah.popBack());
-    assert(blah.popFront().isNone());
+    writeln(myCoolQueue.popBack());
+    writeln(myCoolQueue.popFront());
+    writeln(myCoolQueue.popBack());
+    assert(myCoolQueue.popFront().isNone());
 }
