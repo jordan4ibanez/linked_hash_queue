@@ -15,10 +15,21 @@ public:
 
 public:
 
-    /*
-    Push element to the back of the queue.
+    /**
+    Push element to the front of the queue. If it exists this has no effect.
     */
-    void push(T element) {
+    void pushFront(T element) {
+        if (element in keys) {
+            return;
+        }
+        keys[element] = true;
+        queue.insertFront(element);
+    }
+
+    /**
+    Push element to the back of the queue. If it exists this has no effect.
+    */
+    void pushBack(T element) {
         if (element in keys) {
             return;
         }
@@ -26,10 +37,25 @@ public:
         queue.insertBack(element);
     }
 
-    /*
-    Pop the first element off the front of the queue. If empty returns None.
+    /**
+    Pop the front element off the front of the queue. If empty returns None.
     */
-    Option!T pop() {
+    Option!T popFront() {
+        Option!T result;
+        if (queue.empty()) {
+            return result;
+        }
+        T gotten = queue.front();
+        result = result.Some(gotten);
+        queue.removeFront();
+        keys.remove(gotten);
+        return result;
+    }
+
+    /**
+    Pop the back element off the back of the queue. If empty returns None.
+    */
+    Option!T popBack() {
         Option!T result;
         if (queue.empty()) {
             return result;

@@ -6,10 +6,10 @@ void main() {
 
 	LinkedHashQueue!int blah;
 
-	blah.push(1);
-	blah.push(2);
-	blah.push(3);
-	blah.push(4);
+	blah.pushBack(1);
+	blah.pushBack(2);
+	blah.pushBack(3);
+	blah.pushBack(4);
 
 	// int[] boof;
 	foreach (i; blah.queue) {
@@ -18,13 +18,13 @@ void main() {
 
 	writeln("====");
 
-	Option!int boof = blah.pop();
+	Option!int boof = blah.popFront();
 
 	if (boof.isSome()) {
 		writeln("some!");
 	}
 
-	blah.push(1);
+	blah.pushBack(1);
 
 	foreach (i; blah.queue) {
 		writeln(i);
