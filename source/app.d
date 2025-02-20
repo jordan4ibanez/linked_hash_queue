@@ -1,6 +1,33 @@
 import std.stdio;
 
-void main()
-{
-	writeln("Edit source/app.d to start your project.");
+import linked_hash_queue;
+
+void main() {
+
+	LinkedHashQueue!int blah;
+
+	blah.push(1);
+	blah.push(2);
+	blah.push(3);
+	blah.push(4);
+
+	// int[] boof;
+	foreach (i; blah.queue) {
+		writeln(i);
+	}
+
+	writeln("====");
+
+	Option!int boof = blah.pop();
+
+	if (boof.isSome()) {
+		writeln("some!");
+	}
+
+	blah.push(1);
+
+	foreach (i; blah.queue) {
+		writeln(i);
+	}
+
 }
