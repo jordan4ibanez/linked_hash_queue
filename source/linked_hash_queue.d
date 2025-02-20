@@ -60,7 +60,7 @@ public:
         if (queue.empty()) {
             return result;
         }
-        T gotten = queue.front();
+        T gotten = queue.back();
         result = result.Some(gotten);
         queue.removeBack();
         keys.remove(gotten);
